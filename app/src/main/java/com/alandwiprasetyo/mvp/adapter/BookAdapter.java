@@ -21,7 +21,7 @@ import java.util.List;
 
 public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
-    private List<Item> movies;
+    private List<Item> books;
     private int rowLayout;
     private Context context;
 
@@ -40,8 +40,8 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         }
     }
 
-    public BookAdapter(List<Item> movies, int rowLayout, Context context) {
-        this.movies = movies;
+    public BookAdapter(List<Item> books, int rowLayout, Context context) {
+        this.books = books;
         this.rowLayout = rowLayout;
         this.context = context;
     }
@@ -56,10 +56,10 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     @Override
     public void onBindViewHolder(BookViewHolder holder, final int position) {
         try {
-            holder.title.setText(movies.get(position).getVolumeInfo().getTitle());
-            holder.author.setText(String.format("Author by %s", movies.get(position).getVolumeInfo().getAuthors().get(0)));
-            Glide.with(context).load(movies.get(position).getVolumeInfo().getImageLinks().getThumbnail()).into(holder.thumbnail);
-            holder.rating.setRating(movies.get(position).getVolumeInfo().getAverageRating().floatValue());
+            holder.title.setText(books.get(position).getVolumeInfo().getTitle());
+            holder.author.setText(String.format("Author by %s", books.get(position).getVolumeInfo().getAuthors().get(0)));
+            Glide.with(context).load(books.get(position).getVolumeInfo().getImageLinks().getThumbnail()).into(holder.thumbnail);
+            holder.rating.setRating(books.get(position).getVolumeInfo().getAverageRating().floatValue());
         } catch (NullPointerException e) {
             holder.rating.setRating(0);
         }
@@ -67,6 +67,6 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
 
     @Override
     public int getItemCount() {
-        return movies.size();
+        return books.size();
     }
 }
