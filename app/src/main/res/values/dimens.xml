@@ -1,0 +1,23 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="card_margin">5dp</dimen>
+    <dimen name="spacing_xsmall">2dp</dimen>
+    <dimen name="spacing_medium">8dp</dimen>
+    <dimen name="spacing_large">16dp</dimen>
+    <dimen name="spacing_xlarge">32dp</dimen>
+    <dimen name="elevation_low">9dp</dimen>
+    <dimen name="elevation_high">12dp</dimen>
+
+    <dimen name="status_bar_height">25dp</dimen>
+    <dimen name="card_book_radius">0dp</dimen>
+    <dimen name="cover_height">160dp</dimen>
+    <dimen name="book_title_padding">10dp</dimen>
+    <dimen name="book_title">15dp</dimen>
+    <dimen name="book_count_padding_bottom">5dp</dimen>
+    <dimen name="book_count">12dp</dimen>
+    <dimen name="ic_book_overflow_width">20dp</dimen>
+    <dimen name="ic_book_overflow_height">30dp</dimen>
+    <dimen name="ic_book_overflow_margin_top">10dp</dimen>
+</resources>

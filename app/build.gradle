@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.alandwiprasetyo.mvp"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        staging {
+            applicationIdSuffix ".staging"
+            buildConfigField("boolean", "SHOW_VARIANT", "true")
+            buildConfigField("String", "ENV", "\"http://staging.yourdomain.com\"")
+        }
+
+        unittest {
+            applicationIdSuffix ".test"
+            buildConfigField("boolean", "SHOW_VARIANT", "true")
+            buildConfigField("String", "ENV", "\"http://test.yourdomain.com\"")
+        }
+
+        production {
+            applicationIdSuffix ".production"
+            buildConfigField("String", "BASE_URL", "\"https://www.googleapis.com/books/v1/\"")
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.android.support:cardview-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+    testCompile 'junit:junit:4.12'
+    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'javax.annotation:javax.annotation-api:1.2'
+    compile 'io.reactivex:rxjava:1.1.8'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
+    compile group: 'com.google.guava', name: 'guava', version: '20.0'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+//    DAGGER
+//    compile 'com.google.dagger:dagger:2.8'
+//    annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
+}

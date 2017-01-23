@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="search_book">Search Book</string>
+    <string name="title_book">Title Book</string>
+    <string name="author_by_anonymous">Author by Anonymous</string>
+    <string name="image_book">Image Book</string>
+    <string name="overflow_book">Overflow</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Haec dicuntur fortasse ieiunius; Sed erat aequius Triarium aliquid de dissensione nostra iudicare.</string>
+    <string name="description">Description :</string>
+</resources>
