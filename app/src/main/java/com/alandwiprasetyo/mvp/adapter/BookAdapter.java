@@ -19,19 +19,19 @@ import java.util.List;
  * Created by alandwiprasetyo on 11/21/16.
  */
 
-public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MovieViewHolder> {
+public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder> {
 
     private List<Item> movies;
     private int rowLayout;
     private Context context;
 
-    static class MovieViewHolder extends RecyclerView.ViewHolder {
+    static class BookViewHolder extends RecyclerView.ViewHolder {
         TextView title;
         TextView author;
         ImageView thumbnail;
         RatingBar rating;
 
-        MovieViewHolder(View v) {
+        BookViewHolder(View v) {
             super(v);
             title = (TextView) v.findViewById(R.id.title);
             author = (TextView) v.findViewById(R.id.author);
@@ -47,14 +47,14 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.MovieViewHolde
     }
 
     @Override
-    public BookAdapter.MovieViewHolder onCreateViewHolder(ViewGroup parent,
+    public BookAdapter.BookViewHolder onCreateViewHolder(ViewGroup parent,
                                                           int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(rowLayout, parent, false);
-        return new MovieViewHolder(view);
+        return new BookViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(MovieViewHolder holder, final int position) {
+    public void onBindViewHolder(BookViewHolder holder, final int position) {
         try {
             holder.title.setText(movies.get(position).getVolumeInfo().getTitle());
             holder.author.setText(String.format("Author by %s", movies.get(position).getVolumeInfo().getAuthors().get(0)));
